@@ -35,8 +35,6 @@ public class Example
             Console.WriteLine(num);
         } 
     }
-
-    // Search predicate returns true if a string ends in "20".
    private static bool Equals20(String s)
     {
         return s.ToLower().Equals("20");
