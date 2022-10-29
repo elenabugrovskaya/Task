@@ -22,21 +22,3 @@ else if (num<=9999)
    sum = num/1000%10 + num/100%10 + num/10%10 + num%10;
 
 Console.WriteLine($"Сумма цифр в числе: {sum}");
-
-// if (num < 1000)
-//{
-//   sum = num.ToString()[0] + num.ToString()[1];
-//Console.WriteLine($"Сумма цифр в числе {sum}");
-//}
-//else if (num <= 9999)
-//{
-//   sum = num.ToString()[0] + num.ToString()[1] + num.ToString()[3] + num.ToString()[4];
-//Console.WriteLine($"Сумма цифр в числе {sum}");
-//}
-
-// + {num.ToString()[2]}");
-// + {num.ToString()[1]}");
-//if (num > 99) Console.WriteLine($"Третья цифра заданного числа {num.ToString()[2]}");
-//if (num > 99) Console.WriteLine($"Третья цифра заданного числа {num.ToString()[2]}");
-
-//else  Console.WriteLine("Третьей цифры нет"); 
