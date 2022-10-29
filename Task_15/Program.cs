@@ -2,4 +2,12 @@
 //3, 5 -> 243 (3⁵)
 //2, 4 -> 16
 
-Console.WriteLine("Hello, World!");
+Console.Write("Введите число A: ");
+int A = int.Parse(Console.ReadLine());
+Console.Write("Введите число B: ");
+int B = int.Parse(Console.ReadLine());
+void stepen()
+{
+    Console.WriteLine($"А в степени В равно: {Math.Pow(A, B)}");
+}
+stepen();
