@@ -40,5 +40,6 @@ PrintArray(array);
 Console.WriteLine();
 Summa(array);
 PrintArray(array);
+Console.ReadKey();
 
 
