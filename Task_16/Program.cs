@@ -1,7 +1,7 @@
 ﻿// Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 
-int num = new Random().Next(10, 9999);
-Console.WriteLine(num);
+Console.Write("Введите число от 1 до 9999: ");
+int num = int.Parse(Console.ReadLine());
 int sum = 0;
 if (num < 100)
    sum = num/10 + num%10;
