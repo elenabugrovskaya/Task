@@ -1,16 +1,5 @@
 ﻿// Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 
-/*Console.WriteLine("Введите число:");
-int n = int.Parse(Console.ReadLine());
-int sum = 0;
-//while (n > 0)
- int s1 = n/10;
-    if (s1>0 && s1<10)
-    sum = sum + s1;
-   // else break;
-Console.WriteLine($"Сумма цифр в числе равна: {sum}");
-*/
-//Console.WriteLine("Hello, World!");
 int num = new Random().Next(10, 9999);
 Console.WriteLine(num);
 int sum = 0;
