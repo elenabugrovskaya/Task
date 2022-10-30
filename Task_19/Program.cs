@@ -1,32 +1,31 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿// Программа должна создать массив из 12 случайных целых чисел из отрезка [-10;10] таким образом, чтобы отрицательных и 
+// положительных элементов там было поровну и не было нулей. При этом порядок следования элементов должен быть случаен 
+// (т. е. не подходит вариант, когда в массиве постоянно выпадает сначала 6 положительных, а потом 6 отрицательных чисел или 
+//же когда элементы постоянно чередуются через один и пр.). Вывести полученный массив на экран.
 
-Console.Write("Введите число: ");
-int num = int.Parse(Console.ReadLine());
-void summa()
-{
-            int sum = 0;
-            while (num > 0)
-            {
- 
-                sum = sum + num % 10;
-                num = num /10 ;
- 
-            }
-Console.WriteLine($"Сумма цифр в числе: {sum}");
-}
-summa();
 
-Console.Write("Введите число от 1 до 9999: ");
-int num = int.Parse(Console.ReadLine());
-void summa()
+const int N = 12;
+int[] a = new int[N];
+
+Random rnd = new Random();
+int positive = 0;
+int negative = 0;
+
+for (int i = 0; i < N; i++)
 {
-int sum = 0;
-if (num < 100)
-   sum = num/10 + num%10;
-else if (num<1000)
-   sum = num/100%10 + num/10%10 + num%10;
-else if (num<=9999)
-   sum = num/1000%10 + num/100%10 + num/10%10 + num%10;
-Console.WriteLine($"Сумма цифр в числе: {sum}");
+    int value;
+    do
+    {
+        value = rnd.Next(-10, 10);
+    } while (value == 0 ||
+              (value < 0 && negative == (N + 1) / 2) ||
+              (value > 0 && positive == (N + 1) / 2));
+
+    if ( value < 0 ) ++negative;
+    else ++positive;
+
+    a[i] = value;
 }
-summa();
+
+foreach (int x in a) Console.Write("{0} ", x);
+Console.WriteLine();
