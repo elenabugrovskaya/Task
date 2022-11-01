@@ -13,21 +13,23 @@ void Print(int[] arr)
     Console.WriteLine(String.Join(" ", arr));
     Console.Write("\n");
 }
-int difference = 0;
-int ColChet (int[] arr)
+int diff = 0;
+int max = 0;
+int min = 0;
+int Difference (int[] arr)
 {
-    {
      for (int i=0; i<arr.Length; i++)
-     int max = arr[0];
-     if (arr[i] > max) max = 
-    }
-return difference;
+     {
+     if (arr[i] > max) max = arr[i];
+     if (arr[i] < min) min = arr[i];
+     }
+diff= max - min;
+return diff; 
 }
 int[] array = new int[5];
 array = CreateMas(5);
 Print(array);
-difference = sum +arr[i];
-ColChet(array);
-Console.WriteLine($"Сумма нечетных элементов массива: {sum}");
+Difference(array);
+Console.WriteLine($"Разница между максимальным и минимальным элементами массива: {diff}");
 
 
