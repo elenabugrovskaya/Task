@@ -17,7 +17,7 @@ int diff = 0;
 int max = 0;
 int min = 0;
 int Difference (int[] arr)
-{
+ {
      for (int i=0; i<arr.Length; i++)
      {
      if (arr[i] > max) max = arr[i];
