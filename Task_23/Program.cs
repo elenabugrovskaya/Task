@@ -1,6 +1,5 @@
-﻿// Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
-// [3, 7, 23, 12] -> 19
-// [-4, -6, 89, 6] -> 0
+﻿// Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+// [3 7 22 2 78] -> 76
 
 int[] CreateMas (int n)
 {
@@ -14,18 +13,21 @@ void Print(int[] arr)
     Console.WriteLine(String.Join(" ", arr));
     Console.Write("\n");
 }
-int sum = 0;
-int ColNeChet (int[] arr)
+int difference = 0;
+int ColChet (int[] arr)
 {
     {
      for (int i=0; i<arr.Length; i++)
-     if (arr[i]%2 != 0) sum = sum +arr[i];
+     int max = arr[0];
+     if (arr[i] > max) max = 
     }
-return sum;
+return difference;
 }
 int[] array = new int[5];
 array = CreateMas(5);
 Print(array);
-ColNeChet(array);
+difference = sum +arr[i];
+ColChet(array);
 Console.WriteLine($"Сумма нечетных элементов массива: {sum}");
+
 
