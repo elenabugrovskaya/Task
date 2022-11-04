@@ -2,7 +2,7 @@
 
 int n = int.Parse(Console.ReadLine());
 int[,] m = new int [n,n];
-int cc = 1;
+int cc = 0;
 
 for (int i=0; i<m.GetLength(0); i++)
 {
