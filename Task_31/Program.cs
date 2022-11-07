@@ -27,19 +27,17 @@ void Average(List<List<int>> mylist)
 { 
     double sum = 0;
     double mid = 0;
-    for(int j=0; j<4; j++)
+    for(int j=0; j<mylist.Count; j++)
     {
-    for(int i=0; i<4; i++)
+    for(int i=0; i<mylist.Count; i++)
     {
           sum += mylist[i][j];
           mid = sum/mylist.Count; 
     }
-    if (j==0) Console.Write(mid + "\t");  sum = 0;
-    if (j==1) Console.Write(mid + "\t");  sum = 0;
-    if (j==2) Console.Write(mid + "\t");  sum = 0;
-    if (j==3) Console.Write(mid + "\t");
+     Console.Write(mid + "\t");  sum = 0;
     }
 }  
+int k = 0;
 List<List<int>> numbers = new List<List<int>>();
 FillList(numbers);
 PrintList(numbers); 
