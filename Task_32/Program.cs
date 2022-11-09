@@ -42,7 +42,7 @@ void Sedl (List<List<int>> mylist)
             if(MinI1<MinI0) MinI0=MinI1;
         }
         MinRow.Add(MinI0);
-        Console.Write(MinI0 + "\t");
+        //Console.Write(MinI0 + "\t");
     }
     Console.WriteLine();
     for (int j=0; j < mylist.Count; j++)
@@ -54,28 +54,30 @@ void Sedl (List<List<int>> mylist)
         if(MaxJ1>MaxJ0) MaxJ0=MaxJ1; 
     }
     MaxCol.Add(MaxJ0);
-    Console.Write(MaxJ0 + "\t");
+    //Console.Write(MaxJ0 + "\t");
     }
-    Console.WriteLine();
+    int count = 0;
     bool proverka = false;
     for (int i=0; i < mylist.Count; i++)
         {
             for (int j=0; j < mylist.Count; j++)
             {
-                if (mylist[i][j] == MaxJ0 && mylist[i][j] == MinI0) 
-                Console.WriteLine($"Точка {mylist[i][j]} является седловой.");
+                if (mylist[i][j] == MaxCol[i] && mylist[i][j] == MinRow[i]) 
+                {
+                count++;
                 proverka=true;
-                else (!proverka) Console.WriteLine("Седловых точек нет.")
+                }
             }
         }
+        if(proverka==true) Console.WriteLine($"Cедловых точек: {count}.");
+        else Console.WriteLine("Cедловых точек нет.");
     }
-}
+
 
 List<List<int>> numbers = new List<List<int>>();
 FillList(numbers);
 Console.WriteLine();
 Console.WriteLine("Массив:");
 PrintList(numbers); 
-Console.WriteLine();
 Sedl(numbers);
-Console.WriteLine("Hello, World!");
+
