@@ -7,10 +7,13 @@
 
 void FillList(List<List<int>> mylist)
 {
-    for(int i=0; i<4; i++)
+    Console.WriteLine("Задайте рамер массива: ");
+    int n = int.Parse(Console.ReadLine());
+    int m = int.Parse(Console.ReadLine());
+    for(int i=0; i<n; i++)
     {
         mylist.Add(new List<int>());
-        for(int j=0; j<4; j++)
+        for(int j=0; j<m; j++)
         mylist[i].Add(new Random().Next(0,10));
     }
 }
@@ -40,6 +43,9 @@ void Average(List<List<int>> mylist)
 int k = 0;
 List<List<int>> numbers = new List<List<int>>();
 FillList(numbers);
+Console.WriteLine();
+Console.WriteLine("Массив:");
 PrintList(numbers); 
+Console.WriteLine();
 Console.WriteLine("Среднее арифметическое по столбцам:");
 Average(numbers);
