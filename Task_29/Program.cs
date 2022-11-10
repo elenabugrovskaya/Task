@@ -1,4 +1,4 @@
-﻿// Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+﻿// Задайте двумерный массив размером m×n, заполненный случайными вещественными числами
 // m = 3, n = 3. 
 // Пример:
 // 0,5 7 -2 -0,2
@@ -26,9 +26,8 @@ void PrintList(List<List<int>> mylist)
         Console.WriteLine();
     }
 }
-List<List<double>> numbers = new List<List<double>>();
+List<List<int>> numbers = new List<List<int>>();
 FillList(numbers);
-PrintList(numbers); 
-
-    
-
+Console.WriteLine();
+Console.WriteLine("Массив:");
+PrintList(numbers);  
