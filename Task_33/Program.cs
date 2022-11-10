@@ -31,17 +31,26 @@ void PrintList(List<List<int>> mylist)
 }
 void Sortirovka(List<List<int>> mylist)
 {
-    for (int j=0; j<mylist.Count-1; j++)
+    for (int i = 0; i < mylist.Count; i++) 
     {
-        for(int i=0; i<mylist.Count; i++)
-        {  
-        if (mylist[i][j] < mylist[i][j+1] )
-        {  //Console.WriteLine(mylist[i][j+1]); 
-            int temp = mylist[i][j];
-            mylist[i][j] = mylist[i][j+1];
-            mylist[i][j+1] = temp;
-        } 
-        }       
+        for (int j = 0; j < mylist[i].Count; j++) 
+        {
+           int minind = j; 
+           for (int ii = j; ii < mylist[i].Count; ii++) 
+        {
+            if (mylist[0][ii] < mylist[0][minind])
+            {
+                minind = ii; 
+            }
+        }     
+            // чтобы заменять все строки
+         for(int allI=0; allI<mylist.Count; allI++)  { 
+                int temp = mylist[allI][j]; 
+                mylist[allI][j] = mylist[allI][minind]; 
+                mylist[allI][minind] = temp; 
+            }
+        }
+        
     }
 }
 List<List<int>> numbers = new List<List<int>>();
