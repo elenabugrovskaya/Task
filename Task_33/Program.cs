@@ -60,6 +60,27 @@ Console.WriteLine("Массив:");
 PrintList(numbers); 
 Console.WriteLine();
 Sortirovka(numbers);
-
-//Console.WriteLine("Hello, World!");
 PrintList(numbers); 
+
+/* void SortList(List <List <double>> Mylist){
+    int k = 5; // ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÑ‚Ð¾Ð»Ð±Ñ†Ð¾Ð² -1 Mylist.Count - 1
+    while (k>0){
+        int index = 0;
+        for (int j=1;j<k;j++)
+            if (Mylist[0][j]>Mylist[0][index])
+                index = j;
+        //Console.Write(index+ " ");
+        for(int i=0;i<5;i++){
+            double temp = Mylist[i][index];
+            Mylist[i][index] = Mylist[i][k-1];
+            Mylist[i][k-1] = temp ;
+        }
+        //PrintList(Mylist); 
+        k--;  
+    }
+}
+List <List <double>> numbers = new List<List<double>>();
+fillList(numbers);
+PrintList(numbers);
+SortList(numbers);
+PrintList(numbers); */
