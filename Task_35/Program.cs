@@ -24,23 +24,23 @@ void Output (int [,] arr)
 } 
 void Average(int [,] arr)
 { 
- int minRowSum = int.MaxValue, indexMinRow = 0;
+ int minSum = int.MaxValue, index = 0;
  
 for (int i = 0; i < arr.GetLength(0); i++)
 {
-    int rowSum = 0;
+    int Sum = 0;
     for (int j = 0; j < arr.GetLength(1); j++)
-    rowSum += arr[i, j];
+    Sum += arr[i, j];
                 
-    if (rowSum < minRowSum)
+    if (Sum < minSum)
     {
-        minRowSum = rowSum;
-        indexMinRow = i;
+        minSum = Sum;
+        index = i;
     }
 }
 Console.WriteLine("Строка с минимальной суммой элементов:");
-for(int j = 0;j<arr.GetLength(1);j++)
-Console.Write(arr[indexMinRow, j] + "\t");    
+for(int j = 0; j<arr.GetLength(1); j++)
+Console.Write(arr[index, j] + "\t");    
 }  
 
 int[,] array = new int [4, 5];
