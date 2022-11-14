@@ -84,7 +84,7 @@ namespace ConsoleApplication1
         }
         static int[,] Multiplication(int[,] a, int[,] b)
         {
-            if (a.GetLength(1) != b.GetLength(0)) throw new Exception("Матрицы нельзя перемножить");
+            if (a.GetLength(1) != b.GetLength(0)) Console.WriteLine("Матрицы нельзя перемножить");
             int[,] r = new int[a.GetLength(0), b.GetLength(1)];
             for (int i = 0; i < a.GetLength(0); i++)
             {
