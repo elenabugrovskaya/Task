@@ -18,32 +18,30 @@ using System;
             int[,] a = new int[n, n];
             int[] temp = new int[n];
 
-            int[,] FillMas (int[,] a)
+            void FillMas (int[,] arr)
             {
             Random ran = new Random();
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n; j++)
                 {
-                    a[i, j] = ran.Next(1, 5);
+                    arr[i, j] = ran.Next(0, 10);
                 }
             }
-            return a;
             }
-            int[,] Sort (int[,] a)
+            void Sort (int[,] arr)
             {
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n; j++)
-                    temp[j] = a[i, j];
+                    temp[j] = arr[i, j];
                 Array.Sort(temp);
                 Array.Reverse(temp);
                 for (int k = 0; k < n; k++)
                 {
-                    a[i, k] = temp[k];
+                    arr[i, k] = temp[k];
                 }
             }
-            return a;
             }
             void Output (int [,] arr)
             {
@@ -51,7 +49,7 @@ using System;
                 {
                 for (int j = 0; j < n; j++)
                 {
-                     Console.Write("{0}\t", a[i, j]);
+                     Console.Write("{0}\t", arr[i, j]);
                 }
                 Console.WriteLine();
                 }
