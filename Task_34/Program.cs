@@ -8,57 +8,55 @@
 // 9 5 3 2
 // 8 4 4 2
 
-void FillList(List<List<int>> mylist)
+using System;
+ 
+namespace Draft
 {
-    Console.WriteLine("Задайте рамер массива: ");
-    int n = int.Parse(Console.ReadLine());
-    int m = int.Parse(Console.ReadLine());
-    for(int i=0; i<n; i++)
+    class Program
     {
-        mylist.Add(new List<int>());
-        for(int j=0; j<m; j++)
-        mylist[i].Add(new Random().Next(0,10));
-    }
-}
-void PrintList(List<List<int>> mylist)
-{
-    for(int i=0; i<mylist.Count; i++)
-    {
-        for(int j=0; j<mylist.Count; j++)
-        Console.Write(mylist[i][j] + "\t");
-        Console.WriteLine();
-    }
-}
-void Sortirovka(List<List<int>> mylist)
-{
-    for (int i = 0; i < mylist.Count; i++) 
-    {
-        for (int j = 0; j < mylist[i].Count; j++) 
+        static void Main()
         {
-           int minind = j; 
-           for (int ii = j; ii < mylist[i].Count; ii++) 
-        {
-            if (mylist[0][ii] > mylist[0][minind])
+            int[][] mas = new int[3][];
+            mas[0] = new int[4];
+            mas[1] = new int[4];
+            mas[2] = new int[4];
+ 
+            // Заполняем массив случайными числами
+            Random random = new Random();
+            for (int i = 0; i < mas.Length; i++)
             {
-                minind = ii; 
+                for (int j = 0; j < mas[i].Length; j++)
+                    mas[i][j] = random.Next(0, 10);
             }
-        }     
-            // чтобы заменять все строки
-         for(int allI=0; allI<mylist.Count; allI++)  { 
-                int temp = mylist[allI][j]; 
-                mylist[allI][j] = mylist[allI][minind]; 
-                mylist[allI][minind] = temp; 
+
+            // Исходное содержимое массива
+            Console.WriteLine("Массив");
+            foreach (int[] item in mas)
+            {
+                foreach (int element in item)
+                    Console.Write(element + " ");
+                Console.WriteLine();
+            }
+ 
+            // Сортировка массива
+            foreach (int[] item in mas)
+            {
+                foreach (int element in item)
+                {
+                    Array.Sort(item);
+                    Array.Reverse(item);
+                }
+                    
+            }
+ 
+            // Отсортированное содержимое массива
+            Console.WriteLine("\nОтсортированный массив");
+            foreach (int[] item in mas)
+            {
+                foreach (int element in item)
+                    Console.Write(element + " ");
+                Console.WriteLine();
             }
         }
-        
     }
-}
-List<List<int>> numbers = new List<List<int>>();
-FillList(numbers);
-Console.WriteLine();
-Console.WriteLine("Массив:");
-PrintList(numbers); 
-Console.WriteLine();
-Sortirovka(numbers);
-PrintList(numbers); 
-
+}        
