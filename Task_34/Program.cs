@@ -10,53 +10,39 @@
 
 using System;
  
-namespace Draft
-{
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
-            int[][] mas = new int[3][];
-            mas[0] = new int[4];
-            mas[1] = new int[4];
-            mas[2] = new int[4];
- 
-            // Заполняем массив случайными числами
-            Random random = new Random();
-            for (int i = 0; i < mas.Length; i++)
+            
+            int n = 4;
+            int[,] a = new int[n, n];
+            int[] temp = new int[n];
+            
+            Random ran = new Random();
+            for (int i = 0; i < n; i++)
             {
-                for (int j = 0; j < mas[i].Length; j++)
-                    mas[i][j] = random.Next(0, 10);
-            }
-
-            // Исходное содержимое массива
-            Console.WriteLine("Массив");
-            foreach (int[] item in mas)
-            {
-                foreach (int element in item)
-                    Console.Write(element + " ");
+                for (int j = 0; j < n; j++)
+                {
+                    a[i, j] = ran.Next(1, 5);
+                    Console.Write("{0}\t", a[i, j]);
+                }
                 Console.WriteLine();
             }
  
-            // Сортировка массива
-            foreach (int[] item in mas)
+            Console.WriteLine("\nСортировка по строкам: ");
+            for (int i = 0; i < n; i++)
             {
-                foreach (int element in item)
+                for (int j = 0; j < n; j++)
+                    temp[j] = a[i, j];
+                Array.Sort(temp);
+                Array.Reverse(temp);
+                for (int k = 0; k < n; k++)
                 {
-                    Array.Sort(item);
-                    Array.Reverse(item);
+                    a[i, k] = temp[k];
+                    Console.Write("{0}\t", a[i, k]);
                 }
-                    
-            }
- 
-            // Отсортированное содержимое массива
-            Console.WriteLine("\nОтсортированный массив");
-            foreach (int[] item in mas)
-            {
-                foreach (int element in item)
-                    Console.Write(element + " ");
                 Console.WriteLine();
             }
         }
     }
-}        
