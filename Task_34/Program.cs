@@ -26,15 +26,12 @@ using System;
                 for (int j = 0; j < n; j++)
                 {
                     a[i, j] = ran.Next(1, 5);
-                    Console.Write("{0}\t", a[i, j]);
                 }
-                Console.WriteLine();
             }
             return a;
             }
             int[,] Sort (int[,] a)
             {
-            Console.WriteLine("\nСортировка по строкам: ");
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n; j++)
@@ -44,13 +41,27 @@ using System;
                 for (int k = 0; k < n; k++)
                 {
                     a[i, k] = temp[k];
-                    Console.Write("{0}\t", a[i, k]);
                 }
-                Console.WriteLine();
             }
             return a;
             }
+            void Output (int [,] arr)
+            {
+                for (int i = 0; i < n; i++)
+                {
+                for (int j = 0; j < n; j++)
+                {
+                     Console.Write("{0}\t", a[i, j]);
+                }
+                Console.WriteLine();
+                }
+            }    
+
             FillMas(a);
+            Console.WriteLine("\n Массив: ");
+            Output(a);
             Sort(a);
+            Console.WriteLine("\n Сортировка по строкам: ");
+            Output(a);
         }
     }
