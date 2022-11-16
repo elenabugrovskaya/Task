@@ -22,32 +22,19 @@ void Output (int [,] arr)
 } 
 void Spiral (int[,] arr)
 { 
-int k = 1; 
-int t = 0; 
-int i, j = 0; 
-int n = arr.GetLength(1);
-int m = arr.GetLength(0);
-int n1 = n;  
-int m1 = m;
- 
-while (k <= n1 * m1) 
-{ 
-for (i = t; i < n; i++) 
-    arr[j, i] = k++; 
-    j = n - 1; 
-for (i = t + 1; i < m; i++) 
-    arr[i, j] = k++; 
-    j = m - 1; 
-for (i = n - 2; i >= t; i--) 
-    arr[j, i] = k++; 
-    j = t; 
-for (i = m - 2; i > t; i--) 
-    arr[i, j] = k++; 
-    n--; 
-    m--; 
-    t++; 
-    j = t; 
-} 
+int temp = 1; 
+int i = 0;
+int j = 0; 
+while (temp <= arr.GetLength(0)*arr.GetLength(1))
+{
+arr[i,j] = temp;
+temp++;
+if (i <= j + 1 && i + j < arr.GetLength(1) - 1) j++;
+else if (i < j && i + j >= arr.GetLength(0) - 1) i++;
+else if (i >= j && i + j > arr.GetLength(1) - 1) j--;
+else i--;
+}
+//return arr;
 }
 
 int[,] array = new int [4, 4];
