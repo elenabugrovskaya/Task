@@ -14,11 +14,12 @@ using System;
     {
         static void Main(string[] args)
         {
-            
             int n = 4;
             int[,] a = new int[n, n];
             int[] temp = new int[n];
-            
+
+            int[,] FillMas (int[,] a)
+            {
             Random ran = new Random();
             for (int i = 0; i < n; i++)
             {
@@ -29,7 +30,10 @@ using System;
                 }
                 Console.WriteLine();
             }
- 
+            return a;
+            }
+            int[,] Sort (int[,] a)
+            {
             Console.WriteLine("\nСортировка по строкам: ");
             for (int i = 0; i < n; i++)
             {
@@ -44,5 +48,9 @@ using System;
                 }
                 Console.WriteLine();
             }
+            return a;
+            }
+            FillMas(a);
+            Sort(a);
         }
     }
