@@ -4,8 +4,7 @@
 
 int  SumNumbers (int m, int n)
 {
-    if (m < n) 
-    return n + SumNumbers (m, n-1);
+    if (m < n) return n + SumNumbers (m, n-1);
     else return n;
 }
 Console.WriteLine(SumNumbers(4, 8));
